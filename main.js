@@ -1,4 +1,7 @@
 let content = document.getElementById("content");
+let music = document.getElementById("audio");
+let button = document.getElementById("button");
+button.addEventListener("click", playMusic);
 let arr = [
     "Minh Châu ơi...",
     "Anh xin lỗi...",
@@ -21,11 +24,15 @@ let arr = [
 ];
 let index = 0;
 
+function playMusic() {
+    music.play();
+    button.style.visibility = "hidden";
+}
+
 function changeMessage() {
     if (index == arr.length) {
-        content.style.fontSize = "40px";
-        let music = document.getElementById("audio");
-        music.play();
+        content.classList.add("show");
+        button.style.display = "block";
         setInterval(() => {
             createHeart();
         }, 200);
@@ -50,11 +57,10 @@ setTimeout(() => {
 }, 4500);
 
 function createHeart() {
-
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = 3 + Math.random() * 2 + "s"; // tốc độ rơi khác nhau
+    heart.style.animationDuration = 3 + Math.random() * 2 + "s"; 
     document.body.appendChild(heart);
 
     setTimeout(() => {

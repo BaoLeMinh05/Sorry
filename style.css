@@ -20,13 +20,33 @@
         height: 100vh;
     }
 
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 300px;
+    }
+
     #content {
         padding: 10px;
         line-height: 40px;
         font-size: 25px;
         opacity: 1;
         text-align: center;
-        transition: opacity 1s ease-in-out;
+        transition: font-size 1s ease-in-out;
         z-index: 1;
+    }
+
+    .show {
+        font-size: 40px;
+    }
+
+    button {
+        display: none;
+        margin-top: 20px;
+        padding: 16px 18px;
+        border-radius: 10px;
+        background-color: pink;
     }
 }
